@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/style.css" rel="stylesheet">
+    <title>VIEW</title>
+</head>
+<body>
+  {% extends "main2.html" %}
+  {% block content %}
+
+  <h1>User's Cars</h1>
+  <table>
+          <tr>
+              <th>ID</th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Price</th>
+              <th>Owned By</th>
+          </tr>
+      <tbody>
+          {% for car in cars %}
+          <tr>
+            {% for user in users %}
+              {% if user.id == car.user_id %}
+
+                <td>{{ car.id }}</td>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ user.username }}</td>
+
+                {% if car.user_id == current_user_id %}
+                <td><a href="/update/{{ car.id }}">UPDATE</a></td>
+                <td><a href="/delete/{{ car.id }}">DELETE</a></td>
+                {% endif %}
+
+              {% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+  {% endblock %}
+</body>
+</html>

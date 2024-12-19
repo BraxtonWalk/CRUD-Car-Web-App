@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/style.css" rel="stylesheet">
+    <title>UPDATE</title>
+</head>
+<body>
+    {% extends "main2.html" %}
+    {% block content %}
+
+    <h1>Update Car</h1>
+    <form method="POST">
+
+        Brand: <input type="text" name="brand" value="{{ car.brand }}"><br>
+        Model: <input type="text" name="model" value="{{ car.model }}"><br>
+        Price: <input type="number" name="price" value="{{ car.price }}"><br>
+
+        <button type="submit">Update</button>
+    </form>
+
+  {% endblock %}
+</body>
+</html>

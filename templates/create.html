@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/style.css" rel="stylesheet">
+    <title>CREATE</title>
+</head>
+<body>
+    {% extends "main.html" %}
+    {% block content %}
+        <form action="/create_user" method="POST">
+
+            {% if error %}
+                <h1>ERROR! Username already Exists</h1>
+            {% endif %}
+
+            Username: <input type="text" name="username"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" value="SUBMIT">
+
+        </form>
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/style.css" rel="stylesheet">
+    <title>ADD</title>
+</head>
+<body>
+  {% extends "main2.html" %}
+  {% block content %}
+      <script src="/static/code.js"></script>
+      <label>Brand: </label> <input type="text" id="brand"><br>
+      <label>Model: </label> <input type="text" id="model"><br>
+      <label>Price: </label> <input type="number" id="price"><br>
+      <button id="submit" onclick="add_car()">ADD CAR</button>
+
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/style.css" rel="stylesheet">
+    <title>HOME</title>
+</head>
+<body>
+    {% if auth %}
+        {% extends "main2.html" %}
+    {% else %}
+        {% extends "main.html" %}
+    {% endif %}
+
+    {% block content %}
+        {% if auth %}
+            <h1> Welcome {{ user.username }}!</h1>
+            <p> Click the <a href="/add_car">ADD CAR</a> link to add a car to the database.</p>
+            <p> Click the <a href="/view_cars">VIEW CARS</a> link to view all cars in the database.</p>
+        {% else %}
+            <h1> Welcome to my car web app!</h1>
+            <p> Click the <a href="/login">LOGIN</a> link to login to your account.</p>
+            <p> Click the <a href="/create_user">CREATE USER</a> link to create a new account.</p>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
